@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('docs', function () {
+    return \File::get(public_path('index.html'));
+});
 Route::get('/', function () {
 
 //    $link = new mysqli('mysql', 'phone_book', 'root');

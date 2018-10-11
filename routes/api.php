@@ -13,8 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('contacts.getAll', 'ContactController@getAll');
-Route::get('contacts.getByName', 'ContactController@getByName');
+Route::get('contact.getList', 'ContactController@getList');
+Route::get('contact.getByName', 'ContactController@getByName');
 Route::post('contact.create', 'ContactController@create');
-Route::put('contact.edit', 'ContactContrller@edit');
+Route::put('contact.edit', 'ContactController@edit');
 Route::delete('contact.delete', 'ContactController@delete');
