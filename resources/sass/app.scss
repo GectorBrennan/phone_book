@@ -1,15 +1,387 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
-
-// Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
 .container {
-  width: 1300px;
-  max-width: 1300px;
-  margin-top: 150px;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+  min-height: 500px;
+  position: relative;
 }
+
+.title {
+  font-size: 27px;
+  color: #777;
+  text-align: center;
+  font-weight: bold;
+  font-family: helvetica, sans-serif;
+}
+
+.search {
+  position: relative;
+  margin-top: 2px;
+  height: 33px;
+
+  &-filed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 1em;
+    padding: 3px 5px 3px 10px;
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a1a1a1;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #eee inset;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    &:hover {
+      border-color: #999;
+      box-shadow: 0 1px 2px #ccc inset;
+    }
+    &:focus {
+      border-color: #b094aa;
+      box-shadow: 0 1px 2px #b094aa inset;
+      outline: none;
+      outline-color: initial;
+      outline-width: initial;
+    }
+
+  }
+
+  &-icon {
+    position: absolute;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
+    border: none;
+    background: url($serch-icon) no-repeat center;
+    z-index: 6;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &-clear {
+    position: absolute;
+    right: 35px;
+    width: 26px;
+    height: 26px;
+    margin-top: 4px;
+    border: none;
+    background: url($search-clear) no-repeat center;
+    z-index: 6;
+    outline: none;
+    cursor: pointer;
+
+  }
+
+  & &-icon:hover, & &-clear:hover {
+    opacity: 0.7;
+  }
+}
+
+.info {
+  color: #555;
+  position: relative;
+  height: 40px;
+  margin-bottom: 0.2em;
+  border-bottom: 1px solid #c9c9c9;
+
+  & h1 {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    margin: 0;
+    font-size: 1.1em;
+    left: 0;
+  }
+  & span {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    margin: 0;
+    font-size: 0.8em;
+    right: 0;
+    text-align: right;
+  }
+}
+
+.add {
+  margin-top: 10px;
+
+  &-icon {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: url($add) no-repeat center;
+    outline: none;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  .popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 100000;
+
+    & .content {
+      width: 500px;
+      height: 350px;
+      background-color: #fff;
+      position: absolute;
+      left: 40%;
+      top: 30%;
+      border-radius: 10px;
+
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 26px;
+        height: 26px;
+        border: none;
+        background: url($search-clear) no-repeat center;
+        cursor: pointer;
+        outline: none;
+        &:hover {
+          opacity: .6;
+
+        }
+      }
+
+      .title {
+        margin-top: 50px;
+      }
+
+      .form-group {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 30px;
+
+        .input-group {
+
+          margin-top: 15px;
+          span {
+            display: inline-block;
+            width: 20%;
+            text-align: center;
+          }
+          input {
+            display: inline-block;
+            width: 75%;
+            height: 30px;
+            border-radius: 5px;
+            padding: 3px 5px 3px 10px;
+            border: 1px solid #b9b9b9;
+
+            &:hover {
+              border-color: #999;
+              box-shadow: 0 1px 2px #ccc inset;
+            }
+            &:focus {
+              border-color: #b094aa;
+              box-shadow: 0 1px 2px #b094aa inset;
+              outline: none;
+              outline-color: initial;
+              outline-width: initial;
+            }
+          }
+
+          input[type=submit] {
+            width: 180px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #777;
+            margin: 0 auto;
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            left: 30%;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #776;
+            }
+
+            &:active {
+              opacity: .8;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+.contacts {
+
+  margin-top: 10px;
+  .contact {
+    padding: 4px;
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #b094aa;
+
+    &:hover {
+      border: 1px solid #b094aa;
+      border-radius: 3px;
+    }
+
+    & > div {
+      display: flex;
+      margin-top: 7px;
+    }
+    &-name input{
+      text-decoration: none;
+      font-weight: bold;
+      color: #6f244f;
+      font-size: 18px;
+      background: transparent;
+      border: 1px solid #b094aa;
+      padding: 5px;
+
+      &:disabled {
+        border: none;
+      }
+    }
+
+    &-edit, &-delete {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      width: 26px;
+      height: 26px;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        opacity: .6;
+      }
+    }
+
+    &-edit {
+      background: url($pencil) no-repeat center;
+      right: 20px;
+
+      &.done {
+        background: url($done) no-repeat center;;
+      }
+    }
+
+    &-delete {
+      background: url($search-clear) no-repeat center;
+
+    }
+
+    &-email {
+      display: inline-block;
+      text-align: center;
+      margin-left: 20px;
+      width: 40%;
+      input {
+        background: transparent;
+        border: 1px solid #b094aa;
+        width: 85%;
+        padding: 5px;
+
+        &:disabled {
+          border: none;
+        }
+      }
+      &:before {
+        content: url($email);
+        margin-left: 5px;
+        margin-right: 7px;
+
+      }
+    }
+
+    &-phone {
+      display: inline-block;
+      text-align: center;
+      margin-left: 20px;
+
+      input {
+        background: transparent;
+        border: 1px solid #b094aa;
+        padding: 5px;
+
+        &:disabled {
+          border: none;
+        }
+      }
+      &:before {
+        content: url($phone);
+        margin-left: 5px;
+        margin-right: 7px;
+
+      }
+    }
+
+    &-email:hover, &-phone:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+  }
+}
+
+.pagination {
+  padding: 10px 0;
+  position: absolute;
+  bottom: -80px;
+
+  * {
+    display: inline-block;
+    font-size: 18px;
+    padding: 0 7px;
+
+  }
+
+  > div {
+    padding: 0 7px;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0 20px;
+    li {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: #6f244f;
+        cursor: default;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+
 
 

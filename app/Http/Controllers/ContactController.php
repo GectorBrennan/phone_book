@@ -30,7 +30,7 @@ class ContactController extends Controller
         return [
             'response' => [
                 'data' => $response,
-                'all_loaded' => allEntitiesLoaded($total, $page, $per_page)
+                'total' => $total
             ],
             'status_code' => 200
         ];
@@ -61,7 +61,7 @@ class ContactController extends Controller
         return [
             'response' => [
                 'data' => $response,
-                'all_loaded' => allEntitiesLoaded($total->count(), $page, $per_page)
+                'total' => $total->count()
             ],
             'status_code' => 200
         ];
@@ -79,11 +79,12 @@ class ContactController extends Controller
     {
         $name = $request->input('name', '');
         $phone = $request->input('phone', '');
+        $email = $request->input('email' , '');
 
         $response = Contact::create([
             'name' => $name,
             'phone' => $phone,
-            'email' => ''
+            'email' => $email
         ]);
 
         return [
@@ -105,16 +106,17 @@ class ContactController extends Controller
         $id = $request->input('id');
         $name = $request->input('name', '');
         $phone = $request->input('phone', '');
+        $email = $request->input('email', '');
 
 
         $response = Contact::find($id)
             ->update([
                 'name' => $name,
-                'phone' => $phone
+                'phone' => $phone,
+                'email' => $email
             ]);
 
         return [
-            'response' => $response,
             'status_code' => 200
         ];
     }

@@ -7,11 +7,20 @@
     <title>{{env('APP_NAME')}}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://phonebook.cern.ch/phonebook/css/application.css?_debugResources=y&n=1539290187826">
+    <style>
+
+    </style>
 </head>
 <body>
+
+
 <div id="app">
-    <google-map></google-map>
+    <app></app>
 </div>
+
 <script src="{{ mix('js/app.js') }}"></script>
+
 </body>
 </html>
